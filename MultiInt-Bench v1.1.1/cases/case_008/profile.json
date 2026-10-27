@@ -1,0 +1,7 @@
+{
+  "architecture": "riscv",
+  "word_bits": 32,
+  "int_bits": 32,
+  "pointer_bits": 32,
+  "target": "RV32IMAC"
+}

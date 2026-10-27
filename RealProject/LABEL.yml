@@ -1,0 +1,36 @@
+dataset: REAL_PROJECT
+dataset_id: REAL_PROJECT
+description: |
+  Controlled interrupt-concurrency defect injections into real-world projects.
+  BLUE: AV/CIRE; MYND: AV/MWDR; NVNA: AV/MWDR.
+  GitHub repos:
+    - https://github.com/r2axz/bluepill-serial-monster
+    - https://github.com/teufelaudio/mynd-firmware
+    - https://github.com/ttrftech/NanoVNA
+cases:
+- case: bluepill_serial_monster
+  profile: bluepill-serial-monster-main/profile.json
+  file:
+  - bluepill-serial-monster-main/main.c
+  - bluepill-serial-monster-main/usb_cdc.c
+  bugs:
+  - "runtime_budget <R#16>,<W#526>,<W#17> | (16, 526, 17) | (main.c, usb_cdc.c, main.c) | RWW"  # Single-variable atomicity violation
+  - "clock_divider <-1>,<W#527>,<R#21> | (-1, 527, 21) | (main.c, usb_cdc.c, main.c) | CIRE"  # Interrupt-related division by zero
+
+- case: mynd_firmware
+  profile: mynd-firmware-main/profile.json
+  file:
+  - mynd-firmware-main/Projects/Mynd/src/main.cpp
+  - mynd-firmware-main/Projects/Mynd/src/stm32f0xx_it.c
+  - mynd-firmware-main/Projects/Mynd/src/tasks/bluetooth/task_bluetooth.cpp
+  bugs:
+  - "g_btlink_seq_tx <R#38>,<W#54>,<W#39> | (38, 54, 39) | (main.cpp, stm32f0xx_it.c, main.cpp) | RWW"  # Single-variable atomicity violation
+  - "g_btlink_octets_u64 <R#40>,<W#55>,<R#40> | (40, 55, 40) | (main.cpp, stm32f0xx_it.c, main.cpp) | MWDR_RW"  # Multiword data race: 64-bit read / 32-bit target words
+
+- case: nanovna_main
+  profile: ttrftech__NanoVNA-main/profile.json
+  file:
+  - ttrftech__NanoVNA-main/main.c
+  bugs:
+  - "g_sweep_decim <R#97>,<W#654>,<W#98> | (97, 654, 98) | (main.c, main.c, main.c) | RWW"  # Single-variable atomicity violation
+  - "g_sweep_energy_u64 <R#99>,<W#655>,<R#99> | (99, 655, 99) | (main.c, main.c, main.c) | MWDR_RW"  # Multiword data race: 64-bit read / 32-bit target words

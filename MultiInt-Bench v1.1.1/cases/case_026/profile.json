@@ -1,0 +1,7 @@
+{
+  "architecture": "avr",
+  "word_bits": 8,
+  "int_bits": 16,
+  "pointer_bits": 16,
+  "target": "ATmega328P"
+}

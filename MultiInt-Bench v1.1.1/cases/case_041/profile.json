@@ -1,0 +1,7 @@
+{
+  "architecture": "msp430",
+  "word_bits": 16,
+  "int_bits": 16,
+  "pointer_bits": 16,
+  "target": "MSP430F1611"
+}

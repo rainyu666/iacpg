@@ -1,0 +1,327 @@
+dataset: MultiInt-Bench
+dataset_id: MULTINT_BENCH
+cases:
+- case: case_001
+  file: cases/case_001/case.c
+  bugs:
+  - "AV: queue.get_ptr<R#43>,<W#55>,<R#43>"  # Single-variable atomicity violation
+  - "CIRE: queue.get_ptr<R#43>,<W#55>,<R#43>"  # Interrupt-related array out-of-bounds access
+
+- case: case_002
+  file: cases/case_002/case.c
+  bugs: []  # No defect
+
+- case: case_003
+  file: cases/case_003/case.c
+  bugs:
+  - "AV: active_pin<R#73>,<W#72>,<R#73>"  # Single-variable atomicity violation
+  - "CIRE: active_pin<R#73>,<W#72>,<R#73>"  # Interrupt-related array out-of-bounds access
+
+- case: case_004
+  file: cases/case_004/case.c
+  bugs: []  # No defect
+
+- case: case_005
+  file: cases/case_005/case.c
+  bugs:
+  - "AV: selector<W#19>,<W#19>,<R#20>"  # Single-variable atomicity violation
+
+- case: case_006
+  file: cases/case_006/case.c
+  bugs: []  # No defect
+
+- case: case_007
+  file: cases/case_007/case.c
+  bugs:
+  - "AV: stream.get.head<R#17>,<W#24>,<R#17>"  # Single-variable atomicity violation
+  - "CIRE: stream.get.head<R#17>,<W#24>,<R#17>"  # Interrupt-related division by zero
+
+- case: case_008
+  file: cases/case_008/case.c
+  bugs: []  # No defect
+
+- case: case_009
+  file: cases/case_009/case.c
+  bugs:
+  - "AV: inbox.read_count<R#15>,<W#21>,<R#15>"  # Single-variable atomicity violation
+  - "CIRE: inbox.read_count<R#15>,<W#21>,<R#15>"  # Interrupt-related division by zero
+
+- case: case_010
+  file: cases/case_010/case.c
+  bugs: []  # No defect
+
+- case: case_011
+  file: cases/case_011/case.c
+  bugs:
+  - "MWDR: curr_tick<R#27>,<W#23>,<R#27>"  # Multiword data race
+
+- case: case_012
+  file: cases/case_012/case.c
+  bugs: []  # No defect
+
+- case: case_013
+  file: cases/case_013/case.c
+  bugs:
+  - "MWDR: wdt_millis<R#48>,<W#42>,<R#48>"  # Multiword data race
+
+- case: case_014
+  file: cases/case_014/case.c
+  bugs: []  # No defect
+
+- case: case_015
+  file: cases/case_015/case.c
+  bugs:
+  - "AV: schedule.interval<W#48>,schedule<R#55>,schedule.start<W#49>"  # Multi-variable atomicity violation
+
+- case: case_016
+  file: cases/case_016/case.c
+  bugs: []  # No defect
+
+- case: case_017
+  file: cases/case_017/case.c
+  bugs:
+  - "AV: accumulated_cycle_count<R#43>,last_rtc_value<W#24>,last_rtc_value<R#43>"  # Multi-variable atomicity violation
+  - "MWDR: last_rtc_value<R#43>,<W#24>,<R#43>"  # Multiword data race
+
+- case: case_018
+  file: cases/case_018/case.c
+  bugs: []  # No defect
+
+- case: case_019
+  file: cases/case_019/case.c
+  bugs:
+  - "MWDR: _xtimer_current_time<R#26>,<W#16>,<R#26>"  # Multiword data race
+
+- case: case_020
+  file: cases/case_020/case.c
+  bugs: []  # No defect
+
+- case: case_021
+  file: cases/case_021/case.c
+  bugs:
+  - "AV: wdt_millis<R#46>,<W#53>,<R#46>"  # Single-variable atomicity violation
+  - "CIRE: wdt_millis<R#46>,<W#53>,<R#46>"  # Interrupt-related division by zero
+
+- case: case_022
+  file: cases/case_022/case.c
+  bugs: []  # No defect
+
+- case: case_023
+  file: cases/case_023/case.c
+  bugs:
+  - "AV: slots[0]<R#48>,<W#64>,<R#48>"  # Single-variable atomicity violation
+  - "CIRE: slots[0]<R#48>,<W#64>,<R#48>"  # Interrupt-related array out-of-bounds access
+
+- case: case_024
+  file: cases/case_024/case.c
+  bugs: []  # No defect
+
+- case: case_025
+  file: cases/case_025/case.c
+  bugs:
+  - "AV: bytes.get_ptr<R#44>,<W#53>,<R#44>"  # Single-variable atomicity violation
+  - "CIRE: bytes.get_ptr<R#44>,<W#53>,<R#44>"  # Interrupt-related division by zero
+
+- case: case_026
+  file: cases/case_026/case.c
+  bugs: []  # No defect
+
+- case: case_027
+  file: cases/case_027/case.c
+  bugs:
+  - "AV: block_buffer_tail<R#31>,<W#47>,<R#31>"  # Single-variable atomicity violation
+  - "CIRE: block_buffer_tail<R#31>,<W#47>,<R#31>"  # Interrupt-related array out-of-bounds access
+
+- case: case_028
+  file: cases/case_028/case.c
+  bugs: []  # No defect
+
+- case: case_029
+  file: cases/case_029/case.c
+  bugs:
+  - "AV: count<R#43>,<W#51>,<R#43>"  # Single-variable atomicity violation
+  - "CIRE: count<R#43>,<W#51>,<R#43>"  # Interrupt-related division by zero
+
+- case: case_030
+  file: cases/case_030/case.c
+  bugs: []  # No defect
+
+- case: case_031
+  file: cases/case_031/case.c
+  bugs:
+  - "AV: converter.div<R#33>,<W#56>,<R#34>"  # Single-variable atomicity violation
+  - "CIRE: converter.div<R#33>,<W#56>,<R#34>"  # Interrupt-related division by zero
+
+- case: case_032
+  file: cases/case_032/case.c
+  bugs: []  # No defect
+
+- case: case_033
+  file: cases/case_033/case.c
+  bugs:
+  - "MWDR: seconds<R#39>,<W#38>,<R#39>"  # Multiword data race
+
+- case: case_034
+  file: cases/case_034/case.c
+  bugs: []  # No defect
+
+- case: case_035
+  file: cases/case_035/case.c
+  bugs:
+  - "AV: serial_rx_buffer_head<R#32>,<W#38>,<R#32>"  # Single-variable atomicity violation
+  - "CIRE: serial_rx_buffer_head<R#32>,<W#38>,<R#32>"  # Interrupt-related division by zero
+
+- case: case_036
+  file: cases/case_036/case.c
+  bugs: []  # No defect
+
+- case: case_037
+  file: cases/case_037/case.c
+  bugs:
+  - "MWDR: compare_value<W#28>,<W#39>,<W#28>"  # Multiword data race
+
+- case: case_038
+  file: cases/case_038/case.c
+  bugs: []  # No defect
+
+- case: case_039
+  file: cases/case_039/case.c
+  bugs:
+  - "AV: stream.get.tail<R#17>,<W#24>,<R#17>"  # Single-variable atomicity violation
+  - "CIRE: stream.get.tail<R#17>,<W#24>,<R#17>"  # Interrupt-related array out-of-bounds access
+
+- case: case_040
+  file: cases/case_040/case.c
+  bugs: []  # No defect
+
+- case: case_041
+  file: cases/case_041/case.c
+  bugs:
+  - "AV: queue.put_ptr<R#42>,<W#51>,<R#42>"  # Single-variable atomicity violation
+  - "CIRE: queue.put_ptr<R#42>,<W#51>,<R#42>"  # Interrupt-related array out-of-bounds access
+
+- case: case_042
+  file: cases/case_042/case.c
+  bugs: []  # No defect
+
+- case: case_043
+  file: cases/case_043/case.c
+  bugs:
+  - "AV: converter.mul<R#46>,<W#56>,<R#47>"  # Single-variable atomicity violation
+  - "CIRE: converter.mul<R#46>,<W#56>,<R#47>"  # Interrupt-related division by zero
+
+- case: case_044
+  file: cases/case_044/case.c
+  bugs: []  # No defect
+
+- case: case_045
+  file: cases/case_045/case.c
+  bugs:
+  - "MWDR: curr_tick<R#21>,<W#17>,<R#21>"  # Multiword data race
+
+- case: case_046
+  file: cases/case_046/case.c
+  bugs: []  # No defect
+
+- case: case_047
+  file: cases/case_047/case.c
+  bugs:
+  - "AV: inbox.read_count<R#15>,<W#39>,<R#15>"  # Single-variable atomicity violation
+  - "CIRE: inbox.read_count<R#15>,<W#39>,<R#15>"  # Interrupt-related array out-of-bounds access
+
+- case: case_048
+  file: cases/case_048/case.c
+  bugs: []  # No defect
+
+- case: case_049
+  file: cases/case_049/case.c
+  bugs:
+  - "AV: serial_rx_buffer_head<R#32>,<W#38>,<R#32>"  # Single-variable atomicity violation
+  - "CIRE: serial_rx_buffer_head<R#32>,<W#38>,<R#32>"  # Interrupt-related array out-of-bounds access
+
+- case: case_050
+  file: cases/case_050/case.c
+  bugs: []  # No defect
+
+- case: case_051
+  file: cases/case_051/case.c
+  bugs:
+  - "AV: slots[0]<R#49>,<W#50>,<W#50>"  # Single-variable atomicity violation
+
+- case: case_052
+  file: cases/case_052/case.c
+  bugs: []  # No defect
+
+- case: case_053
+  file: cases/case_053/case.c
+  bugs:
+  - "MWDR: seconds<R#42>,<W#46>,<R#42>"  # Multiword data race
+
+- case: case_054
+  file: cases/case_054/case.c
+  bugs: []  # No defect
+
+- case: case_055
+  file: cases/case_055/case.c
+  bugs:
+  - "AV: shared_rb.put_ptr<W#69>,storage[0]<R#99>,storage[0]<W#70>"  # Multi-variable atomicity violation
+
+- case: case_056
+  file: cases/case_056/case.c
+  bugs: []  # No defect
+
+- case: case_057
+  file: cases/case_057/case.c
+  bugs:
+  - "AV: shared_rb.writes<R#14>,<W#20>,<W#20>"  # Single-variable atomicity violation
+  - "MWDR: shared_rb.writes<R#14>,<W#20>,<R#14>"  # Multiword data race
+
+- case: case_058
+  file: cases/case_058/case.c
+  bugs: []  # No defect
+
+- case: case_059
+  file: cases/case_059/case.c
+  bugs:
+  - "AV: shared_rb.reads<R#14>,<W#20>,<W#20>"  # Single-variable atomicity violation
+  - "MWDR: shared_rb.reads<R#14>,<W#20>,<R#14>"  # Multiword data race
+
+- case: case_060
+  file: cases/case_060/case.c
+  bugs: []  # No defect
+
+- case: case_061
+  file: cases/case_061/case.c
+  bugs:
+  - "AV: shared_rb.writes<R#14>,<W#20>,<W#20>"  # Single-variable atomicity violation
+
+- case: case_062
+  file: cases/case_062/case.c
+  bugs: []  # No defect
+
+- case: case_063
+  file: cases/case_063/case.c
+  bugs:
+  - "MWDR: count<R#42>,<W#46>,<R#42>"  # Multiword data race
+
+- case: case_064
+  file: cases/case_064/case.c
+  bugs: []  # No defect
+
+- case: case_065
+  file: cases/case_065/case.c
+  bugs:
+  - "AV: shared_rb.put_ptr<W#69>,storage[0]<R#99>,storage[0]<W#70>"  # Multi-variable atomicity violation
+
+- case: case_066
+  file: cases/case_066/case.c
+  bugs: []  # No defect
+
+- case: case_067
+  file: cases/case_067/case.c
+  bugs:
+  - "AV: shared_rb.reads<R#14>,<W#20>,<W#20>"  # Single-variable atomicity violation
+
+- case: case_068
+  file: cases/case_068/case.c
+  bugs: []  # No defect

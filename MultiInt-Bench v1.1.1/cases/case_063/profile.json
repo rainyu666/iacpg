@@ -1,0 +1,5 @@
+{
+  "architecture": "avr",
+  "word_bits": 8,
+  "int_bits": 16
+}
